@@ -1,172 +1,302 @@
-// demonstrate seed reset
-// for (let i = 0; i < 10; i++) {
-//   console.log(i, $fx.rand(), $fx.randminter())
-//   $fx.rand.reset();
-//   $fx.randminter.reset();
-// }
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+const sp = new URLSearchParams(window.location.search);
 
-const sp = new URLSearchParams(window.location.search)
-//  console.log(sp);
-
-// this is how to define parameters
 $fx.params([
   {
-    id: "number_id",
-    name: "A number/float64",
+    id: "num_particles",
+    name: "Core Particles",
     type: "number",
-    //default: Math.PI,
+    default: 748,
     options: {
-      min: 1,
-      max: 10,
-      step: 0.0001,
+      min: 121,
+      max: 1221,
+      step: 11,
     },
   },
-
   {
-    id: "bigint_id",
-    name: "A bigint",
-    type: "bigint",
-    update: "code-driven",
-    //default: BigInt(Number.MAX_SAFE_INTEGER * 2),
+    id: "core_color",
+    name: "Core Color",
+    type: "number",
+    default: 0,
     options: {
-      min: Number.MIN_SAFE_INTEGER * 4,
-      max: Number.MAX_SAFE_INTEGER * 4,
+      min: 0,
+      max: 18,
       step: 1,
     },
   },
   {
-    id: "string_id_long",
-    name: "A string long",
-    type: "string",
-    update: "code-driven",
-    //default: "hello",
+    id: "core_speed",
+    name: "Core Speed",
+    type: "number",
+    default: 10,
     options: {
-      minLength: 1,
-      maxLength: 512,
+      min: 1,
+      max: 11,
+      step: 1,
     },
   },
   {
-    id: "select_id",
-    name: "A selection",
-    type: "select",
-    update: "code-driven",
-    //default: "pear",
+    id: "orbit1_color",
+    name: "Orbit #1 Color",
+    type: "number",
+    default: 0,
     options: {
-      options: ["apple", "orange", "pear"],
+      min: 0,
+      max: 18,
+      step: 1,
     },
   },
   {
-    id: "color_id",
-    name: "A color",
-    type: "color",
-    update: "code-driven",
-    //default: "ff0000",
-  },
-  {
-    id: "boolean_id",
-    name: "A boolean",
-    type: "boolean",
-    update: "code-driven",
-    //default: true,
-  },
-  {
-    id: "string_id",
-    name: "A string",
-    type: "string",
-    update: "code-driven",
-    //default: "hello",
+    id: "orbit1_speed",
+    name: "Speed #1",
+    type: "number",
+    default: 8,
     options: {
-      minLength: 1,
-      maxLength: 512,
+      min: 1,
+      max: 11,
+      step: 1,
     },
   },
-])
+  {
+    id: "orbit2_color",
+    name: "Orbit #2 Color",
+    type: "number",
+    default: 0,
+    options: {
+      min: 0,
+      max: 18,
+      step: 1,
+    },
+  },
+  {
+    id: "orbit2_speed",
+    name: "Speed #2",
+    type: "number",
+    default: 6,
+    options: {
+      min: 1,
+      max: 11,
+      step: 1,
+    },
+  },
+  {
+    id: "orbit2_inclination",
+    name: "Inclination #2",
+    type: "number",
+    default: 0,
+    options: {
+      min: -90,
+      max: 90,
+      step: 5,
+    },
+  },
+  {
+    id: "orbit3_color",
+    name: "Orbit #3 Color",
+    type: "number",
+    default: 0,
+    options: {
+      min: 0,
+      max: 18,
+      step: 1,
+    },
+  },
+  {
+    id: "orbit3_speed",
+    name: "Speed #3",
+    type: "number",
+    default: 6,
+    options: {
+      min: 1,
+      max: 11,
+      step: 1,
+    },
+  },
+  {
+    id: "orbit3_inclination",
+    name: "Inclination #3",
+    type: "number",
+    default: 0,
+    options: {
+      min: -90,
+      max: 90,
+      step: 5,
+    },
+  },
+  {
+    id: "orbit4_color",
+    name: "Orbit #4 Color",
+    type: "number",
+    default: 0,
+    options: {
+      min: 0,
+      max: 18,
+      step: 1,
+    },
+  },
+  {
+    id: "orbit4_speed",
+    name: "Speed #4",
+    type: "number",
+    default: 4,
+    options: {
+      min: 1,
+      max: 11,
+      step: 1,
+    },
+  },
+  {
+    id: "orbit4_inclination",
+    name: "Inclination #4",
+    type: "number",
+    default: 0,
+    options: {
+      min: -90,
+      max: 90,
+      step: 5,
+    },
+  },
+  {
+    id: "orbit5_color",
+    name: "Orbit #5 Color",
+    type: "number",
+    default: 0,
+    options: {
+      min: 0,
+      max: 18,
+      step: 1,
+    },
+  },
+  {
+    id: "orbit5_speed",
+    name: "Speed #5",
+    type: "number",
+    default: 5,
+    options: {
+      min: 1,
+      max: 11,
+      step: 1,
+    },
+  },
+  {
+    id: "orbit5_inclination",
+    name: "Inclination #5",
+    type: "number",
+    default: 0,
+    options: {
+      min: -90,
+      max: 90,
+      step: 5,
+    },
+  },
+  {
+    id: "orbit6_color",
+    name: "Orbit #6 Color",
+    type: "number",
+    default: 0,
+    options: {
+      min: 0,
+      max: 18,
+      step: 1,
+    },
+  },
+  {
+    id: "orbit6_speed",
+    name: "Speed #6",
+    type: "number",
+    default: 2,
+    options: {
+      min: 1,
+      max: 11,
+      step: 1,
+    },
+  },
+  {
+    id: "orbit6_inclination",
+    name: "Inclination #6",
+    type: "number",
+    default: 0,
+    options: {
+      min: -90,
+      max: 90,
+      step: 5,
+    },
+  },
+  {
+    id: "orbit7_color",
+    name: "Orbit #7 Color",
+    type: "number",
+    default: 0,
+    options: {
+      min: 0,
+      max: 18,
+      step: 1,
+    },
+  },
+  {
+    id: "orbit7_speed",
+    name: "Speed #7",
+    type: "number",
+    default: 2,
+    options: {
+      min: 1,
+      max: 11,
+      step: 1,
+    },
+  },
+  {
+    id: "orbit7_inclination",
+    name: "Inclination #7",
+    type: "number",
+    default: 0,
+    options: {
+      min: -90,
+      max: 90,
+      step: 5,
+    },
+  },
+  {
+    id: "orbit8_color",
+    name: "Orbit #8 Color",
+    type: "number",
+    default: 0,
+    options: {
+      min: 0,
+      max: 18,
+      step: 1,
+    },
+  },
+  {
+    id: "orbit8_speed",
+    name: "Speed #8",
+    type: "number",
+    default: 1,
+    options: {
+      min: 1,
+      max: 11,
+      step: 1,
+    },
+  },
+  {
+    id: "orbit8_inclination",
+    name: "Inclination #8",
+    type: "number",
+    default: 0,
+    options: {
+      min: -90,
+      max: 90,
+      step: 5,
+    },
+  },
+]);
 
-// this is how features can be defined
 $fx.features({
-  "A random feature": Math.floor($fx.rand() * 10),
-  "A random boolean": $fx.rand() > 0.5,
-  "A random string": ["A", "B", "C", "D"].at(Math.floor($fx.rand() * 4)),
-  "Feature from params, its a number": $fx.getParam("number_id"),
-})
+  "Core Number": $fx.getParam("core_color"),
+  "Core Speed": $fx.getParam("core_speed"),
+  "Core Particles": $fx.getParam("num_particles"),
+  "Total Particles": $fx.getParam("num_particles") * 9,
+});
 
-function main() {
-  // log the parameters, for debugging purposes, artists won't have to do that
-  // console.log("Current param values:");
-  // // Raw deserialize param values
-  // console.log($fx.getRawParams());
-  // // Added addtional transformation to the parameter for easier usage
-  // // e.g. color.hex.rgba, color.obj.rgba.r, color.arr.rgb[0]
-  // console.log($fx.getParams());
-
-  // // how to read a single raw parameter
-  // console.log("Single raw value:");
-  // console.log($fx.getRawParam("color_id"));
-  // // how to read a single transformed parameter
-  // console.log("Single transformed value:");
-  // console.log($fx.getParam("color_id"));
-
-  const getContrastTextColor = backgroundColor =>
-    ((parseInt(backgroundColor, 16) >> 16) & 0xff) > 0xaa
-      ? "#000000"
-      : "#ffffff"
-
-  const bgcolor = $fx.getParam("color_id").hex.rgba
-  const textcolor = getContrastTextColor(bgcolor.replace("#", ""))
-
-  // update the document based on the parameters
-  document.body.style.background = bgcolor
-  document.body.innerHTML = `
-  <div style="color: ${textcolor};">
-    <p>
-    hash: ${$fx.hash}
-    </p>
-    <p>
-    minter: ${$fx.minter}
-    </p>
-    <p>
-    iteration: ${$fx.iteration}
-    </p>
-    <p>
-    inputBytes: ${$fx.inputBytes}
-    </p>
-    <p>
-    context: ${$fx.context}
-    </p>
-    <p>
-    params:
-    </p>
-    <pre>
-    ${$fx.stringifyParams($fx.getRawParams())}
-    </pre>
-  <div>
-  `
-  const btn = document.createElement("button")
-  btn.textContent = "emit random params"
-  btn.addEventListener("click", () => {
-    $fx.emit("params:update", {
-      number_id: $fx.getRandomParam("number_id"),
-      bigint_id: $fx.getRandomParam("bigint_id"),
-      string_id_long: $fx.getRandomParam("string_id_long"),
-      select_id: $fx.getRandomParam("select_id"),
-      color_id: $fx.getRandomParam("color_id"),
-      boolean_id: $fx.getRandomParam("boolean_id"),
-      string_id: $fx.getRandomParam("string_id"),
-    })
-    main()
-  })
-  document.body.appendChild(btn)
-}
-
-main()
-
-$fx.on(
-  "params:update",
-  newRawValues => {
-    // opt-out default behaviour
-    if (newRawValues.number_id === 5) return false
-    // opt-in default behaviour
-    return true
-  },
-  (optInDefault, newValues) => main()
-)
+/******/ })()
+;
